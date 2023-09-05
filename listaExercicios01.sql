@@ -155,3 +155,11 @@ with Total_Matriculas as (
 select alunos.nome, total_matricula
 from alunos
 left join Total_Matriculas on aluno_id = alunos.id;
+
+-- 20
+
+select produto, count(*) as TotalTransacoes	
+from vendas
+group by produto
+order by TotalTransacoes desc
+limit 1;
