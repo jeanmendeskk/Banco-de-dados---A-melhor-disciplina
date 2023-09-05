@@ -105,3 +105,9 @@ values (null, null, 'Ciências da computação');
 select nome, curso
 from alunos
 right join matriculas on aluno_id = alunos.id;
+
+-- 15
+
+select nome, curso
+from alunos
+inner join matriculas on aluno_id = alunos.id;
