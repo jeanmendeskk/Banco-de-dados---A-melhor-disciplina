@@ -144,3 +144,14 @@ With TotalLivros as (
 select autores.nome, livros_totais, livros_totais * 20 as receita_livro
 from autores
 inner join TotalLivros on autor_id = autores.id;
+
+-- 19
+
+with Total_Matriculas as (
+	select aluno_id, count(*) as total_matricula from matriculas
+    group by aluno_id
+)
+
+select alunos.nome, total_matricula
+from alunos
+left join Total_Matriculas on aluno_id = alunos.id;
