@@ -54,3 +54,21 @@ group by produto;
 select produto, sum(receita) as receita_total
 from vendas
 group by produto having receita_total > '10000';
+
+-- 10 
+
+-- tomei liberdade de usar o insert pra busca receber algum valor, pois com a tabela original ele não exibiria nada
+
+insert into livros (id, titulo, autor_id)
+values (null, 'Harry Potter e a Ordem da Fênix', 1),
+(null, 'A revolução dos bichos', 2),
+(null, 'Por Que Escrevo',  2);
+
+With TotalLivros as (
+	select autor_id, count(*) as livros_totais from livros
+    group by autor_id having livros_totais > '2'
+)
+
+select autores.nome, livros_totais
+from autores
+inner join TotalLivros on autor_id = autores.id;
