@@ -72,3 +72,9 @@ With TotalLivros as (
 select autores.nome, livros_totais
 from autores
 inner join TotalLivros on autor_id = autores.id;
+
+-- 11
+
+select nome, titulo
+from autores
+inner join livros on autor_id = autores.id;
