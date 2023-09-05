@@ -111,3 +111,16 @@ right join matriculas on aluno_id = alunos.id;
 select nome, curso
 from alunos
 inner join matriculas on aluno_id = alunos.id;
+
+-- 16 
+
+With TotalLivros as (
+	select autor_id, count(*) as livros_publicados from livros
+    group by autor_id
+)
+
+select autores.nome, livros_publicados
+from autores
+inner join TotalLivros on autor_id = autores.id
+order by livros_publicados desc
+limit 1;
