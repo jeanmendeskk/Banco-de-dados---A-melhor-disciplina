@@ -84,3 +84,14 @@ inner join livros on autor_id = autores.id;
 select nome, curso
 from alunos
 left join matriculas on aluno_id = alunos.id;
+
+-- 13
+
+-- adicionei valores que se encaixam no que o exercicio pede
+
+insert into autores(id, nome, nascimento)
+values (null, 'Stephen King', '1947-09-21'),
+(null, 'George R. R. Martin', '1948-09-20');
+select nome, titulo
+from autores
+left join livros on autor_id = autores.id;
