@@ -131,3 +131,16 @@ select produto, receita
 from vendas
 order by receita asc
 limit 1;
+
+-- 18
+
+-- obs: fiz esse exercicio considerando que cada autor vendeu apenas uma unidade de seus livros, então se o autor publicou mais de um livro, ele "lucrou" mais
+
+With TotalLivros as (
+	select autor_id, count(*) as livros_totais from livros
+    group by autor_id
+)
+
+select autores.nome, livros_totais, livros_totais * 20 as receita_livro
+from autores
+inner join TotalLivros on autor_id = autores.id;
