@@ -78,3 +78,9 @@ inner join TotalLivros on autor_id = autores.id;
 select nome, titulo
 from autores
 inner join livros on autor_id = autores.id;
+
+-- 12
+
+select nome, curso
+from alunos
+left join matriculas on aluno_id = alunos.id;
