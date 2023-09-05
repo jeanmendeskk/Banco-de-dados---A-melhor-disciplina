@@ -44,3 +44,8 @@ order by curso asc;
 select curso, count(*) as totalPessoasCurso
 from matriculas
 group by curso;
+
+-- 8 
+select produto, avg(receita) as receita_media
+from vendas
+group by produto;
