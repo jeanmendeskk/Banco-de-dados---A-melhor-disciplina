@@ -95,3 +95,13 @@ values (null, 'Stephen King', '1947-09-21'),
 select nome, titulo
 from autores
 left join livros on autor_id = autores.id;
+
+-- 14
+
+-- adicionei valores que se encaixam no que o exercicio pede
+
+insert into matriculas(id, aluno_id, curso)
+values (null, null, 'Ciências da computação');
+select nome, curso
+from alunos
+right join matriculas on aluno_id = alunos.id;
