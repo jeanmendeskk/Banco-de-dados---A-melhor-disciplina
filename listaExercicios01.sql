@@ -21,3 +21,13 @@ where matriculas.curso = 'Engenharia de Software';
 select produto, sum(receita) as receita_total
 from vendas
 group by produto;
+
+-- 6 
+With TotalLivros as (
+	select autor_id, count(*) as livros_totais from livros
+    group by autor_id
+)
+
+select autores.nome, livros_totais
+from autores
+inner join TotalLivros on autor_id = autores.id;
