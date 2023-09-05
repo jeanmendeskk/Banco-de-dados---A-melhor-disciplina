@@ -31,3 +31,16 @@ With TotalLivros as (
 select autores.nome, livros_totais
 from autores
 inner join TotalLivros on autor_id = autores.id;
+
+-- 7 
+
+select alunos.nome, matriculas.curso
+from alunos
+inner join matriculas on aluno_id = alunos.id
+order by curso asc;
+
+-- parte 2 ex. 7
+
+select curso, count(*) as totalPessoasCurso
+from matriculas
+group by curso;
