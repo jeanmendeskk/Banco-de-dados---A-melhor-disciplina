@@ -124,3 +124,10 @@ from autores
 inner join TotalLivros on autor_id = autores.id
 order by livros_publicados desc
 limit 1;
+
+-- 17
+
+select produto, receita
+from vendas
+order by receita asc
+limit 1;
